@@ -201,9 +201,9 @@
             <ul class="nav nav-treeview">
               <?php if ($level == 'admin' || $level == 'user') :?>
                 <li class="nav-item"> 
-              <a href="<?= base_url('index.php/berita');?>" class="nav-link">
+              <a href="<?= base_url('index.php/pasien');?>" class="nav-link">
                   <i class="far fa-newspaper nav-icon"></i>
-                  <p>Berita</p>
+                  <p>Pasien</p>
                 </a>
               </li>
               <?php endif; ?>

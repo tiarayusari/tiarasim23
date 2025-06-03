@@ -1,21 +1,31 @@
-<div class="container mt-4">
-    <div class="row">
-        <?php foreach ($berita as $item): ?>
-            <div class="col-md-6">
-                <div class="card mb-4 shadow-sm">
-                    <div class="card-header bg-primary text-white">
-                        <strong><?= $item->judul; ?></strong>
-                    </div>
-                    <div class="card-body">
-                        <span class="badge bg-info"><?= $item->kategori; ?></span>
-                        <p class="mt-2"><em><?= $item->headline; ?></em></p>
-                        <p><?= word_limiter(strip_tags($item->isi_berita), 20); ?>...</p>
-                        <a href="<?= base_url('index.php/home_berita/detail/' . $item->idberita); ?>"
-                        class="btn btn-sm btn-primary">Selengkapnya</a>
-
-                    </div>
-                </div>
-            </div>
+<div class="content-wrapper">
+  <section class="content-header">
+    <h1>Data Pasien</h1>
+  </section>
+  <section class="content">
+    <div class="card">
+      <div class="card-body">
+        <table class="table table-bordered">
+          <thead>
+            <tr>
+              <th>Nama</th>
+              <th>Tanggal Kunjungan</th>
+              <th>Dokter</th>
+              <th>Aksi</th>
+            </tr>
+          </thead>
+          <tbody>
+            <?php foreach ($pasien as $p): ?>
+              <tr>
+                <td><?= $p->nama ?></td>
+                <td><?= date('d-m-Y H:i', strtotime($p->tanggal_kunjungan)) ?></td>
+                <td><?= $p->dokter ?></td>
+                <td><a href="<?= base_url('home_pasien/detail/'.$p->id) ?>" class="btn btn-info btn-sm">Detail</a></td>
+              </tr>
             <?php endforeach; ?>
-        </div>
+          </tbody>
+        </table>
+      </div>
     </div>
+  </section>
+</div>
