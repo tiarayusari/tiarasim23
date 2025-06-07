@@ -4,7 +4,7 @@
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-          <h1>Form status</h1>
+          <h1>Form dokter</h1>
         </div>
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
@@ -20,7 +20,7 @@
       <!-- Default box -->
       <div class="card">
         <div class="card-header">
-          <h3 class="card-title">Update status</h3>
+          <h3 class="card-title">Update dokter</h3>
 
           <div class="card-tools">
             <button type="button" class="btn btn-tool" data-card-widget="collapse" data-toggle="tooltip" title="Collapse">
@@ -30,18 +30,18 @@
           </div>
         </div>
         <div class="box-body">
-            <form action="<?= base_url('index.php/kategori/update/'. $kategori_pasien['idkategori']);?>" method="POST">
+            <form action="<?= base_url('dokter/update/'. $dokter_pasien['iddokter']);?>" method="POST">
             <div class="box-body">
                 
                 <div class="form-group">
-                    <label for="kategori">Status</label>
-                    <input type="text" class="form-control" name="kategori" value="<?= $kategori_pasien['kategori']; ?>" id="kategori" placeholder="Status" required>
+                    <label for="dokter">Dokter Spesialis</label>
+                    <input type="text" class="form-control" name="dokter" value="<?= $dokter_pasien['dokter']; ?>" id="dokter" placeholder="dokter" required>
                 </div>
                 
             </div>
             <div class="box-footer">
                 <button type="submit" class="btn btn-primary">Update</button>
-              <a href="<?= base_url('index.php/kategori'); ?>" class="btn btn-secondary">Batal</a>
+              <a href="<?= base_url('dokter'); ?>" class="btn btn-secondary">Batal</a>
             </div>
         </form>
     </div>

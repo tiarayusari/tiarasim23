@@ -4,7 +4,7 @@
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-          <h1>Daftar status</h1>
+          <h1>Daftar dokter</h1>
         </div>
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
@@ -20,7 +20,7 @@
       <!-- Default box -->
       <div class="card">
         <div class="card-header">
-          <h3 class="card-title">List status</h3>
+          <h3 class="card-title">List dokter</h3>
 
           <div class="card-tools">
             <button type="button" class="btn btn-tool" data-card-widget="collapse" data-toggle="tooltip" title="Collapse">
@@ -30,24 +30,24 @@
           </div>
         </div>
         <div class="card-body">
-          <a href="<?= base_url('index.php/kategori/tambah');?>" class="btn btn-primary mb-3">Tambah Status</a>
-          <?php if (!empty($kategori_pasien)): ?>
+          <a href="<?= base_url('dokter/tambah');?>" class="btn btn-primary mb-3">Tambah dokter</a>
+          <?php if (!empty($dokter_pasien)): ?>
             <table class="table table-bordered table-striped">
               <thead>
                 <tr>
-                  <th>status</th>
+                  <th>Dokter Spesialis</th>
                   <th>Aksi</th>
                 </tr>
               </thead>
               <tbody>
-                <?php foreach($kategori_pasien as $b): ?>
+                <?php foreach($dokter_pasien as $b): ?>
                   <tr>
                     
-                    <td><?= $b['kategori']; ?></td>
+                    <td><?= $b['dokter']; ?></td>
                    
                     <td>
-                      <a href="<?= base_url('index.php/kategori/edit/'. $b['idkategori']); ?>" class="btn btn-sm btn-info">Edit</a>
-                      <a href="<?= base_url('index.php/kategori/hapus/'. $b['idkategori']); ?>" class="btn btn-sm btn-danger" onclick="return confirm('Apakah anda yakin hapus?')">Hapus</a>
+                      <a href="<?= base_url('dokter/edit/'. $b['iddokter']); ?>" class="btn btn-sm btn-info">Edit</a>
+                      <a href="<?= base_url('dokter/hapus/'. $b['iddokter']); ?>" class="btn btn-sm btn-danger" onclick="return confirm('Apakah anda yakin hapus?')">Hapus</a>
 
                     </td>
                   </tr>
@@ -55,7 +55,7 @@
                 </tbody>
                 </table>
                 <?php else: ?>
-                  <p> Tidak ada kategori yang tersedia</p>
+                  <p> Tidak ada dokter yang tersedia</p>
                   <?php endif; ?>
         </div>
         <!-- /.card-body -->

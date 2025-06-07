@@ -3,12 +3,12 @@
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm-6">
-                    <h1>Daftar Pasien</h1>
+                    <h1>Form Pasien</h1>
                 </div>
                 <div class="col-sm-6">
                     <ol class="breadcrumb float-sm-right">
                         <li class="breadcrumb-item"><a href="#">Home</a></li>
-                        <li class="breadcrumb-item active">Formulir Pendaftaran</li>
+                        <li class="breadcrumb-item active">Form Pasien</li>
                     </ol>
                 </div>
             </div>
@@ -18,7 +18,7 @@
     <section class="content">
         <div class="card">
             <div class="card-header">
-                <h3 class="card-title">Formulir Pendaftaran Pasien</h3>
+                <h3 class="card-title">Form Pasien</h3>
                 <div class="card-tools">
                     <button type="button" class="btn btn-tool" data-card-widget="collapse" title="Collapse">
                         <i class="fas fa-minus"></i>
@@ -30,15 +30,31 @@
             </div>
 
             <div class="card-body">
-                <form action="<?php echo base_url('pasien/submit'); ?>" method="POST">
+                <form action="<?= base_url('index.php/pasien/insert'); ?>" method="POST">
                     <div class="form-group">
-                        <label for="nama">Nama Lengkap</label>
-                        <input type="text" class="form-control" name="nama" id="nama" placeholder="Masukkan nama lengkap" required>
+                        <label for="nama">Nama</label>
+                        <input type="text" class="form-control" name="nama" id="nama" placeholder="Nama" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="dokter">Dokter Spesialis</label>
+                        <select class="form-control" name="dokter" id="dokter" required>
+                            <option valuae="">-- Pilih Status --</option>
+                            <?php if (!empty($dokter_pasien)): ?>
+                                <?php foreach ($dokter_pasien as $k): ?>
+                                    <option value="<?= $k->dokter; ?>"><?= $k->dokter; ?></option>
+                                <?php endforeach; ?>
+                            <?php endif; ?>
+                        </select>
                     </div>
 
                     <div class="form-group">
-                        <label for="tanggal_lahir">Tanggal Lahir</label>
-                        <input type="date" class="form-control" name="tanggal_lahir" id="tanggal_lahir" required>
+                        <label for="tgl_lahir">Tanggal Lahir</label>
+                        <input type="date" class="form-control" name="tgl_lahir" id="tgl_lahir" placeholder="yyyy-mm-dd" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="no_tlpn">No Telepon</label>
+                        <input type="text" class="form-control" name="no_tlpn" id="no_tlpn" placeholder="08xxxxxxxxxx" required>
                     </div>
 
                     <div class="form-group">
@@ -47,38 +63,23 @@
                     </div>
 
                     <div class="form-group">
-                        <label for="no_telp">Nomor Telepon</label>
-                        <input type="text" class="form-control" name="no_telp" id="no_telp" placeholder="08xxxxxxxxxx" required>
+                        <label for="keluhan">Keluhan</label>
+                        <textarea class="form-control summernote" name="keluhan" id="keluhan" placeholder="Tuliskan keluhan..." required></textarea>
                     </div>
 
                     <div class="form-group">
-                        <label for="keluhan">Keluhan Penyakit</label>
-                        <textarea class="form-control" name="keluhan" id="keluhan" rows="3" required></textarea>
+                        <label for="tgl_kunjungan">Tanggal Kunjungan</label>
+                        <input type="date" class="form-control" name="tgl_kunjungan" id="tgl_kunjungan" required>
                     </div>
 
                     <div class="form-group">
-                        <label for="tanggal_kunjungan">Tanggal & Jam Kunjungan</label>
-                        <input type="datetime-local" class="form-control" name="tanggal_kunjungan" id="tanggal_kunjungan" required>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="dokter">Dokter Spesialis</label>
-                        <select class="form-control" name="dokter" id="dokter" required>
-                            <option value="">-- Pilih Dokter --</option>
-                            <option value="Spesialis Anak">Spesialis Anak</option>
-                            <option value="Spesialis Umum">Spesialis Umum</option>
-                            <option value="Spesialis Saraf">Spesialis Saraf</option>
-                        </select>
-                    </div>
-
-                    <div class="form-group">
-                        <button type="submit" class="btn btn-primary">Daftar Sekarang</button>
+                        <button type="submit" class="btn btn-primary">Simpan</button>
                     </div>
                 </form>
             </div>
 
             <div class="card-footer">
-                Pastikan data yang Anda isi sudah benar sebelum mengirimkan formulir.
+                <!-- Optional Footer -->
             </div>
         </div>
     </section>

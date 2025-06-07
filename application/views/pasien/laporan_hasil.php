@@ -3,64 +3,71 @@
     <section class="content-header">
         <div class="container-fluid">
             <div class="row mb-2">
-                <div class="sol-sm-6">
-                <h1> Daftar Berita</h1>
-            </div>
+                <div class="col-sm-6">
+                    <h1>Laporan Pasien</h1>
+                </div>
                 <div class="col-sm-6">
                     <ol class="breadcrumb float-sm-right">
                         <li class="breadcrumb-item"><a href="#">Home</a></li>
-                        <li class="breadcrumb-item active">Blank Page</li>
+                        <li class="breadcrumb-item active">Laporan Pasien</li>
                     </ol>
                 </div>
             </div>
-        </div><!-- /.container-fluid -->
+        </div>
     </section>
-    <section class="content">
 
-        <!--Default box -->
+    <!-- Main Content -->
+    <section class="content">
         <div class="card">
             <div class="card-header">
-                <h3 class="card-title">List Berita</h3>
-
+                <h3 class="card-title">Daftar Pasien</h3>
                 <div class="card-tools">
-                    <button type="button" class="btn btn-tool" data-card-widget="collapse" data-toogle="tooltip" title="Collapse">
-                        <i class="fas fa-minus"></i></button>
-                    <button type="button" class="btn btn-tool" data-card-widget="remove" data-toogle="tooltip" title="Remove">
-                        <i class="fas fa-times"></i></button>
+                    <button type="button" class="btn btn-tool" data-card-widget="collapse" title="Collapse">
+                        <i class="fas fa-minus"></i>
+                    </button>
+                    <button type="button" class="btn btn-tool" data-card-widget="remove" title="Remove">
+                        <i class="fas fa-times"></i>
+                    </button>
                 </div>
             </div>
-<h3>Laporan Berita Dari <?= $tanggal_dari ?> sampai <?= $tanggal_sampai ?></h3>
-<table id="datatable" border="1" cellpeding="5" cellspacing="0">
-    <thead>
-        <tr>
-            <th>No</th>
-            <th>Judul</th>
-            <th>Tanggal Publish</th>
-            <th>Isi Berita</th>
-            <th>Penulis</th>
-        </tr>
-    </thead>
-    <tbody>
-        <?php $no = 1; foreach ($berita as $b): ?>
-        <tr>
-            <td><?= $no++ ?></td>
-            <td><?= $b->judul ?></td>
-            <td><?= $b->tanggal_publish ?></td>
-            <td><?= $b->isi_berita ?></td>
-            <td><?= $b->pengirim ?></td>
-        </tr>
-        <?php endforeach; ?>
-    </tbody>
-</table>
-</div>
-        <!-- /.card-body -->
-        <div class="card-footer">
-            Footer
-        </div>
-        <!-- /.card-footer -->
-        </div>
-        <!-- /.card -->
 
-    </section>
-    <!-- /.content -->
+            <div class="card-body">
+                <h5>Laporan pasien dari <strong><?= $tanggal_dari ?></strong> sampai <strong><?= $tanggal_sampai ?></strong></h5>
+
+                <div class="table-responsive">
+                    <table id="datatable" class="table table-bordered table-striped">
+                        <thead class="thead-dark">
+                            <tr>
+                                <th>No</th>
+                                <th>Nama</th>
+                                <th>Tanggal Lahir</th>
+                                <th>Keluhan</th>
+                                <th>Tanggal Kunjungan</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <?php $no = 1; foreach ($pasien as $b): ?>
+                                <tr>
+                                    <td><?= $no++ ?></td>
+                                    <td><?= $b->nama ?></td>
+                                    <td><?= $b->tgl_lahir ?></td>
+                                    <td><?= $b->keluhan ?></td>
+                                    <td><?= $b->tgl_kunjungan ?></td>
+                                </tr>
+                            <?php endforeach; ?>
+                            <?php if (empty($pasien)): ?>
+                                <tr>
+                                    <td colspan="5" class="text-center">Tidak ada data pasien pada rentang tanggal tersebut.</td>
+                                </tr>
+                            <?php endif; ?>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <div class="card-footer">
+                <!-- Optional footer -->
+            </div>
         </div>
+    </section>
+</div>

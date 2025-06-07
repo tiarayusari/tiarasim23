@@ -1,59 +1,55 @@
 <div class="content-wrapper">
-    <!-- Content Header (Page header) -->
+    <!-- Content Header -->
     <section class="content-header">
         <div class="container-fluid">
             <div class="row mb-2">
-                <div class="sol-sm-6">
-                <h1> Daftar Berita</h1>
-            </div>
+                <div class="col-sm-6">
+                    <h1>Laporan Pasien</h1>
+                </div>
                 <div class="col-sm-6">
                     <ol class="breadcrumb float-sm-right">
                         <li class="breadcrumb-item"><a href="#">Home</a></li>
-                        <li class="breadcrumb-item active">Blank Page</li>
+                        <li class="breadcrumb-item active">Laporan Pasien</li>
                     </ol>
                 </div>
             </div>
-        </div><!-- /.container-fluid -->
+        </div>
     </section>
-    <section class="content">
 
-        <!--Default box -->
+    <!-- Main Content -->
+    <section class="content">
         <div class="card">
             <div class="card-header">
-                <h3 class="card-title">List Berita</h3>
-
+                <h3 class="card-title">Filter Laporan Pasien</h3>
                 <div class="card-tools">
-                    <button type="button" class="btn btn-tool" data-card-widget="collapse" data-toogle="tooltip" title="Collapse">
-                        <i class="fas fa-minus"></i></button>
-                    <button type="button" class="btn btn-tool" data-card-widget="remove" data-toogle="tooltip" title="Remove">
-                        <i class="fas fa-times"></i></button>
+                    <button type="button" class="btn btn-tool" data-card-widget="collapse" title="Collapse">
+                        <i class="fas fa-minus"></i>
+                    </button>
+                    <button type="button" class="btn btn-tool" data-card-widget="remove" title="Remove">
+                        <i class="fas fa-times"></i>
+                    </button>
                 </div>
             </div>
-    <div class="box-body">
-<h3>Laporan Berita</h3>
-<form method="post" action="<?= base_url('index.php/berita/cetak_laporan') ?>">
-<div class="box-body">
-    <div class="form-group">
-        <label>Dari Tanggal:</label>
-        <input type="date" name="tanggal_dari" required>
 
-        <label>Sampai Tanggal:</label>
-        <input type="date" name="tanggal_sampai" required>
-        </div>
-    <div class="box-footer">
-        <button type="submit" class="btn btn-primary" >Tampilkan Laporan</button>
-    </div>
-</form>
-
-</div>
-            <!-- /.card-body -->
-            <div class="card-footer">
-                Footer
+            <div class="card-body">
+                <form method="post" action="<?= base_url('index.php/pasien/cetak_laporan') ?>">
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                            <label for="tanggal_dari">Dari Tanggal</label>
+                            <input type="date" name="tanggal_dari" id="tanggal_dari" class="form-control" required>
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="tanggal_sampai">Sampai Tanggal</label>
+                            <input type="date" name="tanggal_sampai" id="tanggal_sampai" class="form-control" required>
+                        </div>
+                    </div>
+                    <button type="submit" class="btn btn-primary mt-2">Tampilkan Laporan</button>
+                </form>
             </div>
-            <!-- /.card-footer -->
+
+            <div class="card-footer">
+                <!-- Optional footer content -->
+            </div>
         </div>
-        <!-- /.card -->
-</div>
-        </section>
-        <!-- /.card -->
+    </section>
 </div>

@@ -1,6 +1,6 @@
 <footer class="main-footer text-center">
     <strong>Copyright &copy;
-        <?= date('Y'); ?> Portal Berita</strong>
+        <?= date('Y'); ?> Portal Pasien</strong>
 </footer>
 
 <aside class="control-sidebar conrol-sidebar-dark">
