@@ -30,7 +30,7 @@
           </div>
         </div>
         <div class="card-body">
-          <a href="<?= base_url('dokter/tambah');?>" class="btn btn-primary mb-3">Tambah dokter</a>
+          <a href="<?= base_url('index.php/dokter/tambah');?>" class="btn btn-primary mb-3">Tambah dokter</a>
           <?php if (!empty($dokter_pasien)): ?>
             <table class="table table-bordered table-striped">
               <thead>
@@ -46,8 +46,8 @@
                     <td><?= $b['dokter']; ?></td>
                    
                     <td>
-                      <a href="<?= base_url('dokter/edit/'. $b['iddokter']); ?>" class="btn btn-sm btn-info">Edit</a>
-                      <a href="<?= base_url('dokter/hapus/'. $b['iddokter']); ?>" class="btn btn-sm btn-danger" onclick="return confirm('Apakah anda yakin hapus?')">Hapus</a>
+                      <a href="<?= base_url('index.php/dokter/edit/'. $b['iddokter']); ?>" class="btn btn-sm btn-info">Edit</a>
+                      <a href="<?= base_url('index.php/dokter/hapus/'. $b['iddokter']); ?>" class="btn btn-sm btn-danger" onclick="return confirm('Apakah anda yakin hapus?')">Hapus</a>
 
                     </td>
                   </tr>

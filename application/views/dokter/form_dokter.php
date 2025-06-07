@@ -45,11 +45,11 @@
         <label for="dokter">Dokter Spesialis</label>
           <select class="form-control" name="dokter" id="dokter" required>
             <option value="">-- Pilih dokter --</option>
-            <option value="klinis">Klinis</option>
-            <option value="kebidanan">Kebidanan</option>
-            <option value="diagnostik">Diagnostik</option>
-            <option value="rehabilitas">Rehabilitas</option>
-            <option value="jiwa & mental">Jiwa & Mental</option>
+            <option value="Umum">Umum</option>
+            <option value="Penyakit_dalam">Penyakit Dalam</option>
+            <option value="Mata">Mata</option>
+            <option value="Bedah">Bedah</option>
+            <option value="Kandungan_ginekologi">Kandungan & Ginekologi</option>
           </select>
           </div>
 

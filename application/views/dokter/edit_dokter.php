@@ -30,7 +30,7 @@
           </div>
         </div>
         <div class="box-body">
-            <form action="<?= base_url('dokter/update/'. $dokter_pasien['iddokter']);?>" method="POST">
+            <form action="<?= base_url('index.php/dokter/update/'. $dokter_pasien['iddokter']);?>" method="POST">
             <div class="box-body">
                 
                 <div class="form-group">
