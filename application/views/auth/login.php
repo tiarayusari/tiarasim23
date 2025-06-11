@@ -60,7 +60,7 @@
 
       <!-- /.social-auth-links -->
       <p class="mb-0">
-        <a href="register.html" class="text-center">Register a new membership</a>
+        <a href="<?= base_url('index.php/auth/register'); ?>" class="text-center">Register a new membership</a>
       </p>
     </div>
     <!-- /.login-card-body -->
